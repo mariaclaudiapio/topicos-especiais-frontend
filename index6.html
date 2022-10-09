@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Template</title>
+    <script>
+        class HelloWorldElement extends HTMLElement {
+            constructor() {
+                super()
+
+                this.attachShadow({ mode: "open" })
+                const tpl = document.getElementById("template-wc")
+                this.shadowRoot.append(tpl.content.cloneNode(true))
+            }
+        }
+
+        customElements.define("hello-world", HelloWorldElement)
+    </script>
+</head>
+<body>
+    <template id="template-wc">
+        <style>
+            :host {
+                display: block;
+                background-color: #333333;
+                color: #FFFFFF;
+                padding: 1em;
+                margin: 1em;
+            }
+
+            h2 {
+                color: greenyellow;
+            }
+        </style>
+
+        <slot name="titulo">
+            <h2>Título Padrão</h2> <!-- valor padrao utilizado quando o slot estiver vazio -->
+        </slot>
+        <p>Aqui vai o conteúdo do elemento:</p>
+        <slot></slot>
+    </template>
+
+    <hello-world></hello-world>
+
+    <hello-world>
+        <div>Este é o conteúdo do elemento.</div>
+        <h2 slot="titulo">Título definido</h2>
+        <h2 slot="titulo">Título 2</h2>
+        <!-- <h3 slot="titulo">H3</h3> -->
+    </hello-world>
+
+    <!-- <script>
+        const tpl = document.getElementById("template-wc")
+        document.body.append(tpl.content.cloneNode(true)) 
+    </script> -->
+</body>
+</html>
