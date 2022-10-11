@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SVG | Path</title>
+    <style>
+        svg {
+            border: 2px dashed grey;
+        }
+    </style>
+</head>
+<body>
+    <h1>SVG com Path</h1>
+
+    <h2>Path básico</h2>
+    <svg width="200" height="120">
+        <path d="M 50 20 L 95 30 L 20 90 M 50 20" fill="none" stroke="red" />
+        <!-- onde M = move (apenas posiciona, sem desenhar), L = Line (traceja/desenha a linha) -->
+    </svg>
+
+    <svg width="200" height="120">
+        <path d="M 50 20 L 95 30 L 20 90 Z" fill="none" stroke="red" />
+        <!-- onde Z fecha o path -->
+    </svg>
+
+    <svg width="200" height="120">
+        <path d="M 50 20 L 95 30 L 20 90" />
+        <!-- mesmo sem o z é feito o fechamento automático. A cor padrão para fill é preto. stroke não vem preenchido por padrão -->
+    </svg>
+
+    <h2>Comandos H e V</h2>
+    <svg width="200" height="120">
+        <path d="M 50 20 H 100 V 70" fill="none" stroke="red" />
+        <!-- onde H é o eixo horizontal e V é o eixo vertical -->
+    </svg>
+
+    <h2>Coordenadas relativas (letras minúsculas)</h2>
+    <svg width="200" height="120">
+        <path d="M 50 20 h 50 v 50 1 -10 10" fill="none" stroke="red" />
+        <!-- onde H é o eixo horizontal e V é o eixo vertical -->
+    </svg>
+
+    <h2>Curvas</h2>
+    <h3>Bézier Quadrática</h3>
+    <svg width="200" height="120">
+        <path d="M 50 20 h 50 q 80 10, 0 50" fill="none" stroke="red" />
+    </svg>
+
+    <h3>Bézier Cúbica</h3>
+    <svg width="200" height="120">
+        <path d="M 50 20 h 50 c 40 10, 40 60, 0 50" fill="none" stroke="red" />
+    </svg>
+
+    <h2>Arco</h2>
+    <svg width="200" height="120" fill="none" stroke="red">
+        <path
+         d="M 50 20 
+         l 20 5
+         a 20 30 0 0 0 30 5
+         l 30 5" />
+        <!-- a rx ry x-axis-rotation large-arc-flag sweep-flag dx dy -->
+        <!-- resumo dos comandos: 
+        M x y - move para x, y
+        L x y - desenha linha até x, y
+        H x - desenha linha horizontal até x
+        V y - desenha linha vertical até y
+        Z - fecha o path (desenha linha até o ponto inicial)
+        A... - arcos
+        C ou Q... - curva de Bézier
+
+        -->
+    </svg>
+</body>
+</html>
