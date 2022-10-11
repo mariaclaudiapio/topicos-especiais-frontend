@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transformações</title>
+    <style>
+        svg {
+            border: 2px dashed grey;
+        }
+    </style>
+</head>
+<body>
+    <h2>Translação</h2>
+    <svg width="200" heigth="120" fill="rgba(255, 0, 50, 0.2)" stroke="red">
+        <path d="M 10 40 l 40 10 l -5 50 Z" />
+        
+        <g transform="translate(30, 20)">
+            <path d="M 10 40 l 40 10 l -5 50 Z" />
+        </g>
+    </svg>
+
+    <h2>Rotação</h2>
+    <svg width="200" heigth="120" fill="rgba(255, 0, 50, 0.2)" stroke="red">
+        <path d="M 10 40 l 40 10 l -5 50 Z" />
+        
+        <g transform="rotate(-30)">
+            <path d="M 10 40 l 40 10 l -5 50 Z" />
+        </g>
+    </svg>
+
+    <h2>Escala</h2>
+    <svg width="200" heigth="120" fill="rgba(255, 0, 50, 0.2)" stroke="red">
+        <path d="M 10 40 l 40 10 l -5 50 Z" />
+        
+        <g transform="scale(1.5)">
+            <path d="M 10 40 l 40 10 l -5 50 Z" />
+        </g>
+    </svg>
+
+    <h2>Várias transformações</h2>
+    <svg width="200" heigth="120" fill="rgba(255, 0, 50, 0.2)" stroke="red">
+        <path d="M 10 40 l 40 10 l -5 50 Z" />
+        
+        <g transform="translate(10, 5) rotate(-10) scale(1.5)">
+            <path d="M 10 40 l 40 10 l -5 50 Z" />
+        </g>
+    </svg>
+</body>
+</html>
