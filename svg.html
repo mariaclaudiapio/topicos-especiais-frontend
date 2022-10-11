@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SVG</title>
+    <style>
+        svg {
+            border: 2px dashed grey;
+        }
+    </style>
+</head>
+<body>
+    <h1>Scalable Vector Graphics (SVG)</h1>
+
+    <h2>Retângulo</h2>
+    <svg width="200" height="120">
+        <rect x="10" y="10" width="100" height="40" />
+    </svg>
+
+    <h2>Círculo</h2>
+    <svg width="200" height="120">
+        <circle 
+        cx = "100"
+        cy="60"
+        r = "40"
+        fill="rgba(255, 0, 255, 0.5)"
+        stroke="black"
+        stroke-width="2"
+        />
+    </svg>
+    
+    <h2>Círculo com texto ao lado</h2>
+    <svg width="300" height="120">
+        <circle 
+        cx = "180"
+        cy="60"
+        r = "40"
+        fill="rgba(255, 0, 255, 0.5)"
+        stroke="black"
+        stroke-width="2"
+        />
+        <text x="10" y="80" style="fill: red; font-size: 20px"> Hello, World!</text>
+    </svg>
+
+    <h2>Elipse</h2>
+    <svg width="300" height="220">
+        <ellipse 
+        cx = "150"
+        cy="110"
+        rx = "100"
+        ry = "50"
+        style="fill: yellow; stroke: black; stroke-width: 2"
+        />
+    </svg>
+</body>
+</html>
