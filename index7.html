@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Template</title>
+    <script type="module" src="helloWord.js"></script>
+</head>
+<body>
+    <h1>Encapsular web-component em módulos</h1>
+    <hello-world></hello-world>
+
+    <hello-world>
+        <div>Este é o conteúdo do elemento.</div>
+        <h2 slot="titulo">Título definido</h2>
+        <h2 slot="titulo">Título 2</h2>
+        <!-- <h3 slot="titulo">H3</h3> -->
+    </hello-world>
+
+    <!-- <script>
+        const tpl = document.getElementById("template-wc")
+        document.body.append(tpl.content.cloneNode(true)) 
+    </script> -->
+</body>
+</html>
