@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas | Transformações</title>
+    <style>
+        canvas {
+            border: 2px dashed grey;
+        }
+    </style>
+</head>
+<body>
+    <h2>Canvas - Transformações</h2>
+    <canvas width="600" height="300" id="canvas2" ></canvas>
+    <script>
+        const canvas = document.getElementById("canvas2")
+        const ctx = canvas.getContext("2d")
+
+        // ctx.fillStyle = "rgba(0, 0, 200, 0.8)"
+        // ctx.translate(250, 100)
+        // ctx.fillRect(0, 0, 100, 100)
+
+        // ctx.fillRect(0, 0, 50, 50) //o Ctx.translate acima mudou a perspectiva do canvas. Para resolver esse problema, podemos usar as funções save() e restore()
+        
+        ctx.fillStyle = "rgba(0, 0, 200, 0.8)"
+        ctx.save()
+        ctx.translate(200, 100)
+        ctx.fillRect(0, 0, 100, 100)
+        ctx.restore()
+
+        ctx.save()
+        ctx.translate(200, 100)
+        ctx.rotate(Math.PI / 8)
+        // ctx.scale(4, 2)
+        ctx.fillRect(0, 0, 50, 50)
+        ctx.restore()
+    </script>
+</body> 
+</html>
