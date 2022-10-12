@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas</title>
+    <style>
+        canvas {
+            border: 2px dashed grey;
+        }
+
+        html {
+            background-color: rgb(132, 231, 231);
+        }
+    </style>
+</head>
+<body>
+    <h2>Canvas com Imagens</h2>
+    <canvas width="600" height="300" id="canvas1"></canvas>
+    <script>
+        const canvas = document.getElementById("canvas1")
+        const ctx = canvas.getContext("2d")
+
+        const imgs = []
+        let loaded = 0
+        
+        for(let i = 0; i < 30; i++) {
+            const img = new Image()
+            img.src = `img/jump_${i + 1}.png`
+            imgs.push(img)
+            img.onload = () => {
+                loaded++
+                if(loaded == 30) {
+                    startAnimation(imgs)
+
+                }
+                
+            }
+            function startAnimation(imgs) {
+                let i = 0
+                setInterval(() => {
+                    const img = imgs[i % imgs.length]
+                    ctx.clearRect(0, 0, 600, 300)
+                    ctx.drawImage(img, i * 1.5, 40, img.width / 2, img.height / 2)
+                    i++
+                }, 30)
+            }
+        }
+    </script>
+</body>
+</html>
